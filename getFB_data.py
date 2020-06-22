@@ -16,7 +16,7 @@ def get_fb_page(url):
     :return: html_source        # html contents of your friends page
     """
     # start the driver
-    time.sleep(random.randint(2, 4))
+    time.sleep(random.random(2, 4))
     driver.get(url)
 
     # get scroll height
@@ -24,12 +24,12 @@ def get_fb_page(url):
 
     # scroll get to end of friends page
     while True:
-        time.sleep(random.randint(1, 4))
+        random.random(2, 4)
         # scroll to the bottom of page
         driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
         # wait for page to load
-        time.sleep(random.randint(2, 4))
+        time.sleep(random.random(2, 4))
 
         # calculate + compare scroll height
         new_height = driver.execute_script("return document.body.scrollHeight")
@@ -78,6 +78,7 @@ def find_name_from_mutual_page(mutual_page):
 
 
 class MyHTMLParser(HTMLParser):
+
     # list of friend's urls
     urls = []
 
@@ -122,7 +123,6 @@ time.sleep(5)
 print("Successfully logged in Facebook!")
 
 SCROLL_PAUSE_TIME = 2
-
 my_url = 'http://www.facebook.com/' + username + '/friends'
 
 # create or open file with urls of all unique friends
@@ -150,6 +150,7 @@ else:
     #     text_file.write(friends_page)
     #     print("Saved friends page html data to file")
 
+
 friend_graph = {}  # set of friends for graph creation
 username_to_name = [(username, name)]  # list to connect usernames to names
 GRAPH_FILENAME = 'friend_graph.pickle'
@@ -160,6 +161,7 @@ if os.path.isfile(GRAPH_FILENAME):
     with open(GRAPH_FILENAME, 'rb') as f:
         friend_graph = pickle.load(f)
     print('Loaded existing graph, found {} keys'.format(len(friend_graph.keys())))
+
 
 # iterate through unique urls, show progress bar each iteration
 count = 0
@@ -213,4 +215,4 @@ for url in tqdm(uniq_urls):
         pickle.dump(username_to_name, f)
 
     # pause before continuing to next friend
-    time.sleep(random.randint(1, 4))
+    time.sleep(random.random(1, 3))

@@ -1,0 +1,7 @@
+numpy
+networkx
+community
+matplotlib
+selenium
+tqdm
+python-louvain
