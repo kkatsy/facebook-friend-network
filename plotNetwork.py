@@ -4,6 +4,8 @@ import networkx as nx
 import numpy as np
 import pickle
 
+# TODO: Add network class so can analyze in another file + import partition info
+
 # retrieve files created by getFB_data
 GRAPH_FILENAME = 'friend_graph.pickle'
 NAMES_FILENAME = 'name_to_id.pickle'
@@ -16,6 +18,7 @@ with open(NAMES_FILENAME, 'rb') as f:
 
 # get your id/username: first entry in username_to_name list
 CENTRAL_ID = username_to_name[0][0]
+
 
 # prune graph for central friends
 central_friends = {}
@@ -79,8 +82,8 @@ plt.show()
 limits = plt.axis('off')
 
 # apply louvain's community detection algo
-part = community.best_partition(G)
-values = [part.get(node) for node in G.nodes()]
+partitioned = community.best_partition(G)                   # username, partition dict
+values = [partitioned.get(node) for node in G.nodes()]      # partition num for v list
 
 # create + graph community graph
 fig = plt.figure()
@@ -89,6 +92,7 @@ plt.rcParams['figure.figsize'] = [10, 10]
 
 nx.draw_networkx(G, pos=pos,
                  cmap=plt.get_cmap('tab10'), node_color=values,
-                 node_size=30, width=0.5, edge_color='grey', with_labels=False, labels=labels, font_size=9)
+                 node_size=30, width=0.5, edge_color='grey', with_labels=True, labels=labels, font_size=9,
+                 font_color='black')
 plt.axis('off')
 plt.show()

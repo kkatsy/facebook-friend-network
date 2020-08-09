@@ -16,7 +16,7 @@ def get_fb_page(url):
     :return: html_source        # html contents of your friends page
     """
     # start the driver
-    time.sleep(random.random(2, 4))
+    time.sleep(random.uniform(2, 4))
     driver.get(url)
 
     # get scroll height
@@ -24,12 +24,12 @@ def get_fb_page(url):
 
     # scroll get to end of friends page
     while True:
-        random.random(2, 4)
+        random.uniform(2, 4)
         # scroll to the bottom of page
         driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
         # wait for page to load
-        time.sleep(random.random(2, 4))
+        time.sleep(random.uniform(2, 4))
 
         # calculate + compare scroll height
         new_height = driver.execute_script("return document.body.scrollHeight")
@@ -110,7 +110,7 @@ name = input("Your full name on FB is: ")
 chrome_options = webdriver.ChromeOptions()
 prefs = {"profile.default_content_setting_values.notifications": 2}
 chrome_options.add_experimental_option("prefs", prefs)
-driver = webdriver.Chrome(chrome_options=chrome_options)
+driver = webdriver.Chrome(options=chrome_options)
 driver.get('http://www.facebook.com/')
 
 # authenticate to facebook account
@@ -215,4 +215,4 @@ for url in tqdm(uniq_urls):
         pickle.dump(username_to_name, f)
 
     # pause before continuing to next friend
-    time.sleep(random.random(1, 3))
+    time.sleep(random.uniform(1, 3))
