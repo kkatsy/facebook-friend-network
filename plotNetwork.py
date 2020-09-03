@@ -4,7 +4,6 @@ import networkx as nx
 import numpy as np
 import pickle
 
-# TODO: Add network class so can analyze in another file + import partition info
 
 # retrieve files created by getFB_data
 GRAPH_FILENAME = 'friend_graph.pickle'
@@ -31,7 +30,7 @@ for k, v in friend_graph.items():
     else:
         removed.append(k)
 
-print('Filtered out {} items'.format(len(friend_graph.keys()) - len(central_friends.keys())))
+print('Filtered out {} friends'.format(len(friend_graph.keys()) - len(central_friends.keys())))
 
 # graph labeling choice
 FULL_NAME = False
