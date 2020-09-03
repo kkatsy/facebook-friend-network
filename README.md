@@ -14,6 +14,7 @@ After building the friend graph, it uses the Louvain Community Detection algorit
 - Scan through the aforementioned article
 - Install the libraries: `pip install -r requirements.txt`
 - Install [Selenium ChromeDriver](https://www.kenst.com/2015/03/installing-chromedriver-on-mac-osx/)
+- Switch your FB to "Classic Mode" (if you want to use the "New Facebook" or scraping doesn't work, you'll need to tinker with regex and the parser class)
 - Scraping your friends list will take some time: 25 secs/friend for me, 80 mins for 189 friends. You could go faster by removing the sleep intervals, but if you go too fast your account could temporarily get blocked.
 - If scraping gets interrupted, you don't have to start from scratch since previously detected friends are saved in file.
 - plotNetwork.py graphs the Louvain-grouped communities
