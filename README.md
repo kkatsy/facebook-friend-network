@@ -1,6 +1,6 @@
 # facebook-friend-network
 
-A little project that graphs and analyzes your facebook friend network. It is built off of [Yihui Fan](https://www.databentobox.com/2019/07/28/facebook-friend-graph/)'s article which, in turn, was built off of [Eliot Andre](https://github.com/EliotAndres/facebook-friend-graph)'s code, which, finally, was built off of [Lucas Allen](https://github.com/lgallen/twitter-graph)'s original code.
+A little project I did for fun that graphs and analyzes your facebook friend network. It is built off of [Yihui Fan](https://www.databentobox.com/2019/07/28/facebook-friend-graph/)'s article which, in turn, was built off of [Eliot Andre](https://github.com/EliotAndres/facebook-friend-graph)'s code, which, finally, was built off of [Lucas Allen](https://github.com/lgallen/twitter-graph)'s original code.
 After building the friend graph, it uses the Louvain Community Detection algorithm to group friends into perceived categories. For some more info regarding how this algorithm works, check out [this article](https://medium.com/walmartglobaltech/demystifying-louvains-algorithm-and-its-implementation-in-gpu-9a07cdd3b010) .
 
 **What I changed and added:**
@@ -17,9 +17,9 @@ After building the friend graph, it uses the Louvain Community Detection algorit
 - Switch your FB to "Classic Mode" (if you want to use the "New Facebook" or scraping doesn't work, you'll need to tinker with regex and the parser class)
 - Scraping your friends list will take some time: 25 secs/friend for me, 80 mins for 189 friends. You could go faster by removing the sleep intervals, but if you go too fast your account could temporarily get blocked.
 - If scraping gets interrupted, you don't have to start from scratch since previously detected friends are saved in file.
-- plotNetwork.py graphs the Louvain-grouped communities
-- networkAnalysis.py uses code from Yihui's article to examine/graph degree, closeness, and betweenness centrality
-- networkStats is a work in progress - hope to eventually add more metrics for Social Network Analysis
+- plotNetwork.py graphs the Louvain-grouped communities.
+- networkAnalysis.py uses code from Yihui's article to examine/graph degree, closeness, and betweenness centrality.
+- networkStats.py is a work in progress - hope to eventually add more metrics for Social Network Analysis.
 
 **My Results:**
 
