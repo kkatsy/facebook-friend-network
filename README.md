@@ -1,6 +1,6 @@
 # facebook-friend-network
 
-A little project that graphs and analyzes your facebook friend network. It built off of [Yihui Fan](https://www.databentobox.com/2019/07/28/facebook-friend-graph/)'s article which, in turn, built off of [Eliot Andre](https://github.com/EliotAndres/facebook-friend-graph)'s code, which, finally, was built off of [Lucas Allen](https://github.com/lgallen/twitter-graph)'s original code.
+A little project that graphs and analyzes your facebook friend network. It is built off of [Yihui Fan](https://www.databentobox.com/2019/07/28/facebook-friend-graph/)'s article which, in turn, was built off of [Eliot Andre](https://github.com/EliotAndres/facebook-friend-graph)'s code, which, finally, was built off of [Lucas Allen](https://github.com/lgallen/twitter-graph)'s original code.
 After building the friend graph, it uses the Louvain Community Detection algorithm to group friends into perceived categories. For some more info regarding how this algorithm works, check out [this article](https://medium.com/walmartglobaltech/demystifying-louvains-algorithm-and-its-implementation-in-gpu-9a07cdd3b010) .
 
 **What I changed and added:**
